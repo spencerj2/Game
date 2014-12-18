@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
-    class Player1
+    class Player1Manager
     {
        
     }

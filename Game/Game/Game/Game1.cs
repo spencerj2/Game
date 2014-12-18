@@ -21,8 +21,10 @@ namespace Game
         Texture2D Background;
         Texture2D player1Texture;
 
-        Vector2 player1Position = new Vector2(800, 900);
+        Vector2 player1Position = new Vector2(125, 750); //(Width, Height)
+        Player1Manager player1Manager;
         
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -32,7 +34,7 @@ namespace Game
             this.graphics.PreferredBackBufferHeight = 1050;
             this.graphics.IsFullScreen = true;
 
-
+           
         }
 
         /// <summary>
@@ -44,6 +46,30 @@ namespace Game
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+
+            KeyboardState keyState = Keyboard.GetState();
+
+            if (keyState.IsKeyDown(Keys.Up))
+            {
+                player1Position += new Vector2(0, -1);
+            }
+
+            if (keyState.IsKeyDown(Keys.Down))
+            {
+                player1Position += new Vector2(0, 1);
+            }
+
+            if (keyState.IsKeyDown(Keys.Left))
+            {
+                player1Position += new Vector2(-1, 0);
+            }
+
+            if (keyState.IsKeyDown(Keys.Right))
+            {
+                player1Position += new Vector2(1, 0);
+            }
+
+
 
             base.Initialize();
         }
@@ -84,6 +110,7 @@ namespace Game
                 this.Exit();
 
             // TODO: Add your update logic here
+            
 
             base.Update(gameTime);
         }
