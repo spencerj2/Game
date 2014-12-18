@@ -19,14 +19,17 @@ namespace Game
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D Background;
+        Texture2D player1Texture;
 
+        Vector2 player1Position = new Vector2(800, 900);
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            this.graphics.PreferredBackBufferWidth = 1050;
-            this.graphics.PreferredBackBufferHeight = 1680;
+            this.graphics.PreferredBackBufferWidth = 1680;
+            this.graphics.PreferredBackBufferHeight = 1050;
             this.graphics.IsFullScreen = true;
 
 
@@ -56,6 +59,8 @@ namespace Game
             Background = Content.Load<Texture2D>(@"Textures\Background");
 
             // TODO: use this.Content to load your game content here
+            player1Texture = Content.Load<Texture2D>(@"Textures\Player1");
+
         }
 
         /// <summary>
@@ -93,7 +98,7 @@ namespace Game
             spriteBatch.Begin();
             // TODO: Add your drawing code here
             spriteBatch.Draw(Background, Vector2.Zero, Color.White);
-
+            spriteBatch.Draw(player1Texture, player1Position, Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }

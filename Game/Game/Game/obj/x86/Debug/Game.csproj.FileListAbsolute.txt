@@ -4,3 +4,5 @@ C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\obj\x86\Debug\Microsoft.Xna
 C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\obj\x86\Debug\Game.exe
 C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\obj\x86\Debug\Game.pdb
 C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Textures\Background.xnb
+C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\obj\x86\Debug\Game.csprojResolveAssemblyReference.cache
+C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Textures\Player1.xnb

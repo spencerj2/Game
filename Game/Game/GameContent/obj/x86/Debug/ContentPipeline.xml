@@ -8,7 +8,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Textures\Background.xnb</Output>
-      <Time>2014-12-15T07:45:30-05:00</Time>
+      <Time>2014-12-18T07:39:38.0126-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Player1.png</Source>
+      <Name>Textures\Player1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Textures\Player1.xnb</Output>
+      <Time>2014-12-18T07:30:36-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
