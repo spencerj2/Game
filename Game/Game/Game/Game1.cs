@@ -47,30 +47,6 @@ namespace Game
         {
             // TODO: Add your initialization logic here
 
-            KeyboardState keyState = Keyboard.GetState();
-
-            if (keyState.IsKeyDown(Keys.Up))
-            {
-                player1Position += new Vector2(0, -1);
-            }
-
-            if (keyState.IsKeyDown(Keys.Down))
-            {
-                player1Position += new Vector2(0, 1);
-            }
-
-            if (keyState.IsKeyDown(Keys.Left))
-            {
-                player1Position += new Vector2(-1, 0);
-            }
-
-            if (keyState.IsKeyDown(Keys.Right))
-            {
-                player1Position += new Vector2(1, 0);
-            }
-
-
-
             base.Initialize();
         }
 
@@ -110,7 +86,23 @@ namespace Game
                 this.Exit();
 
             // TODO: Add your update logic here
-            
+            KeyboardState keyState = Keyboard.GetState();
+            MouseState mouseState = Mouse.GetState();
+
+            if (keyState.IsKeyDown(Keys.Left))
+            {
+                player1Position += new Vector2(-10, 0);
+            }
+
+            if (keyState.IsKeyDown(Keys.Right))
+            {
+                player1Position += new Vector2(10, 0);
+            }
+
+            if (mouseState.LeftButton == ButtonState.Pressed)
+            {
+
+            }
 
             base.Update(gameTime);
         }
