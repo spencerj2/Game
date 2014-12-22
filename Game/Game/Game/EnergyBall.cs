@@ -10,11 +10,16 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Media;
 
-
 namespace Game
 {
-    class Player1Manager
+    public class EnergyBall
     {
-       
+        private Game1 game;
+
+        public EnergyBall(Game1 theGame)
+        {
+            game = theGame;
+        }
     }
 }
+

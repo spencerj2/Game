@@ -20,11 +20,10 @@ namespace Game
         SpriteBatch spriteBatch;
         Texture2D Background;
         Texture2D player1Texture;
-
-        Vector2 player1Position = new Vector2(125, 750); //(Width, Height)
-        Player1Manager player1Manager;
+        Texture2D energyBall;
         
 
+        Vector2 player1Position = new Vector2(125, 750); //(Width, Height)
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -33,8 +32,7 @@ namespace Game
             this.graphics.PreferredBackBufferWidth = 1680;
             this.graphics.PreferredBackBufferHeight = 1050;
             this.graphics.IsFullScreen = true;
-
-           
+      
         }
 
         /// <summary>
@@ -43,10 +41,12 @@ namespace Game
         /// related content.  Calling base.Initialize will enumerate through any components
         /// and initialize them as well.
         /// </summary>
+        /// 
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            Vector2 energyBall = new Vector2(130, 750);
+            EnergyBall EB = new EnergyBall(this);
             base.Initialize();
         }
 
@@ -59,10 +59,10 @@ namespace Game
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Background = Content.Load<Texture2D>(@"Textures\Background");
-
-            // TODO: use this.Content to load your game content here
             player1Texture = Content.Load<Texture2D>(@"Textures\Player1");
-
+            energyBall = Content.Load<Texture2D>(@"Textures\EnergyBall");
+            // TODO: use this.Content to load your game content here
+           
         }
 
         /// <summary>
@@ -118,6 +118,7 @@ namespace Game
             // TODO: Add your drawing code here
             spriteBatch.Draw(Background, Vector2.Zero, Color.White);
             spriteBatch.Draw(player1Texture, player1Position, Color.White);
+            spriteBatch.Draw(energyBall, Vector2.Zero, Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }

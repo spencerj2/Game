@@ -1,2 +1,3 @@
 Content\Textures\Background.xnb
 Content\Textures\Player1.xnb
+Content\Textures\EnergyBall.xnb

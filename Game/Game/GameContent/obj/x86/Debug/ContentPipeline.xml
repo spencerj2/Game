@@ -19,6 +19,15 @@
       <Output>C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Textures\Player1.xnb</Output>
       <Time>2014-12-22T07:26:16.9896-05:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\EnergyBall.png</Source>
+      <Name>Textures\EnergyBall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Textures\EnergyBall.xnb</Output>
+      <Time>2014-12-22T07:44:00.1906-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
