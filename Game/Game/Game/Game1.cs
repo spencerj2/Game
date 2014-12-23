@@ -20,7 +20,9 @@ namespace Game
         SpriteBatch spriteBatch;
         Texture2D Background;
         Texture2D player1Texture;
-        Texture2D energyBall;
+        Texture2D energyBallTexture;
+
+        Rectangle energyBallRectangle;
         
 
         Vector2 player1Position = new Vector2(125, 750); //(Width, Height)
@@ -45,7 +47,6 @@ namespace Game
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            Vector2 energyBall = new Vector2(130, 750);
             EnergyBall EB = new EnergyBall(this);
             base.Initialize();
         }
@@ -60,7 +61,12 @@ namespace Game
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Background = Content.Load<Texture2D>(@"Textures\Background");
             player1Texture = Content.Load<Texture2D>(@"Textures\Player1");
-            energyBall = Content.Load<Texture2D>(@"Textures\EnergyBall");
+            energyBallTexture = Content.Load<Texture2D>(@"Textures\EnergyBall");
+
+            int energyBallx = energyBallRectangle.X;
+            int energyBally = energyBallRectangle.Y;
+
+            energyBallRectangle = new Rectangle(320, 840, energyBallTexture.Width, energyBallTexture.Height);
             // TODO: use this.Content to load your game content here
            
         }
@@ -81,14 +87,13 @@ namespace Game
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            MouseState mouseState = Mouse.GetState();
+            KeyboardState keyState = Keyboard.GetState();
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (keyState.IsKeyDown(Keys.Escape))
                 this.Exit();
 
             // TODO: Add your update logic here
-            KeyboardState keyState = Keyboard.GetState();
-            MouseState mouseState = Mouse.GetState();
-
             if (keyState.IsKeyDown(Keys.Left))
             {
                 player1Position += new Vector2(-10, 0);
@@ -118,7 +123,7 @@ namespace Game
             // TODO: Add your drawing code here
             spriteBatch.Draw(Background, Vector2.Zero, Color.White);
             spriteBatch.Draw(player1Texture, player1Position, Color.White);
-            spriteBatch.Draw(energyBall, Vector2.Zero, Color.White);
+            spriteBatch.Draw(energyBallTexture, energyBallRectangle, Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }
