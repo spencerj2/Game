@@ -26,6 +26,7 @@ namespace Game
         
 
         Vector2 player1Position = new Vector2(125, 750); //(Width, Height)
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -34,8 +35,9 @@ namespace Game
             this.graphics.PreferredBackBufferWidth = 1680;
             this.graphics.PreferredBackBufferHeight = 1050;
             this.graphics.IsFullScreen = true;
-      
+
         }
+
 
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
@@ -61,7 +63,7 @@ namespace Game
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Background = Content.Load<Texture2D>(@"Textures\Background");
             player1Texture = Content.Load<Texture2D>(@"Textures\Player1");
-            energyBallTexture = Content.Load<Texture2D>(@"Textures\EnergyBall");
+            energyBallTexture = Content.Load<Texture2D>(@"Textures\Energyball");
 
             int energyBallx = energyBallRectangle.X;
             int energyBally = energyBallRectangle.Y;
@@ -99,14 +101,21 @@ namespace Game
                 player1Position += new Vector2(-10, 0);
             }
 
+
             if (keyState.IsKeyDown(Keys.Right))
             {
                 player1Position += new Vector2(10, 0);
             }
 
+
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
+                energyBallRectangle = new Rectangle(1600, 840, energyBallTexture.Width, energyBallTexture.Height);
+            }
 
+            if (player1Position.X == 10)
+            {
+                player1Position.X += new Vector2(500, 750); 
             }
 
             base.Update(gameTime);
