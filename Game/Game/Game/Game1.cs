@@ -20,11 +20,11 @@ namespace Game
         SpriteBatch spriteBatch;
         Texture2D Background;
         Texture2D player1Texture;
+        Rectangle player1Rectangle;
         Texture2D energyBallTexture;
 
         Rectangle energyBallRectangle;
         
-
         Vector2 player1Position = new Vector2(125, 750); //(Width, Height)
         
         public Game1()
@@ -32,10 +32,11 @@ namespace Game
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
+            
             this.graphics.PreferredBackBufferWidth = 1680;
             this.graphics.PreferredBackBufferHeight = 1050;
-            this.graphics.IsFullScreen = true;
-
+            this.graphics.IsFullScreen = false;
+            
         }
 
 
@@ -108,14 +109,14 @@ namespace Game
             }
 
 
-            if (mouseState.LeftButton == ButtonState.Pressed)
+            if (keyState.IsKeyDown(Keys.Space))
             {
                 energyBallRectangle = new Rectangle(1600, 840, energyBallTexture.Width, energyBallTexture.Height);
             }
 
-            if (player1Position.X == 10)
+            if (player1Rectangle.X == 100)
             {
-                player1Position.X += new Vector2(500, 750); 
+                player1Position.Y -= 100;
             }
 
             base.Update(gameTime);
@@ -126,6 +127,7 @@ namespace Game
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
+
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
