@@ -22,10 +22,12 @@ namespace Game
         Texture2D player1Texture;
         Rectangle player1Rectangle;
         Texture2D energyBallTexture;
+        Song Song;
+        bool songstart = false;
 
         Rectangle energyBallRectangle;
         
-        Vector2 player1Position = new Vector2(125, 750); //(Width, Height)
+        Vector2 player1Position = new Vector2(90, 490); //(Width, Height)
         
         public Game1()
         {
@@ -33,8 +35,8 @@ namespace Game
             Content.RootDirectory = "Content";
 
             
-            this.graphics.PreferredBackBufferWidth = 1680;
-            this.graphics.PreferredBackBufferHeight = 1050;
+            this.graphics.PreferredBackBufferWidth = 1280;
+            this.graphics.PreferredBackBufferHeight = 720;
             this.graphics.IsFullScreen = false;
             
         }
@@ -65,11 +67,13 @@ namespace Game
             Background = Content.Load<Texture2D>(@"Textures\Background");
             player1Texture = Content.Load<Texture2D>(@"Textures\Player1");
             energyBallTexture = Content.Load<Texture2D>(@"Textures\Energyball");
+            Song = Content.Load<Song>(@"Sounds\Final_Music");
+            MediaPlayer.IsRepeating = true;
 
             int energyBallx = energyBallRectangle.X;
             int energyBally = energyBallRectangle.Y;
 
-            energyBallRectangle = new Rectangle(320, 840, energyBallTexture.Width, energyBallTexture.Height);
+            energyBallRectangle = new Rectangle(290, 575, energyBallTexture.Width, energyBallTexture.Height);
             // TODO: use this.Content to load your game content here
            
         }
@@ -118,6 +122,14 @@ namespace Game
             {
                 player1Position.Y -= 100;
             }
+
+            if (!songstart)
+            {
+                MediaPlayer.Play(Song);
+                songstart = true;
+            }  
+
+
 
             base.Update(gameTime);
         }

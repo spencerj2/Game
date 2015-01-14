@@ -7,3 +7,7 @@ C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Textu
 C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\obj\x86\Debug\Game.csprojResolveAssemblyReference.cache
 C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Textures\Player1.xnb
 C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Textures\EnergyBall.xnb
+C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Textures\evil.xnb
+C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Sounds\FinalMusic.xnb
+C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Sounds\Final_Music.xnb
+C:\Users\EAHSCS\Documents\GitHub\Game\Game\Game\Game\bin\x86\Debug\Content\Sounds\Final_Music.wma
