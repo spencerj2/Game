@@ -118,7 +118,7 @@ namespace Game
 
             if (keyState.IsKeyDown(Keys.Space))
             {
-                energyBallRectangle = new Rectangle(1600, 840, energyBallTexture.Width, energyBallTexture.Height);
+                energyBallRectangle = new Rectangle(1000, 575, energyBallTexture.Width, energyBallTexture.Height);
             }
 
             if (player1Rectangle.X == 100)
@@ -131,7 +131,6 @@ namespace Game
                 MediaPlayer.Play(Song);
                 songstart = true;
             }  
-
 
 
             base.Update(gameTime);
@@ -154,5 +153,6 @@ namespace Game
             spriteBatch.End();
             base.Draw(gameTime);
         }
+       
     }
 }
