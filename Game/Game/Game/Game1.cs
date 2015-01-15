@@ -22,12 +22,14 @@ namespace Game
         Texture2D player1Texture;
         Rectangle player1Rectangle;
         Texture2D energyBallTexture;
+        Texture2D evilTexture;
         Song Song;
         bool songstart = false;
 
         Rectangle energyBallRectangle;
         
         Vector2 player1Position = new Vector2(90, 490); //(Width, Height)
+        Vector2 evilPosition = new Vector2(1100, 490); //(Width, Height)
         
         public Game1()
         {
@@ -67,6 +69,7 @@ namespace Game
             Background = Content.Load<Texture2D>(@"Textures\Background");
             player1Texture = Content.Load<Texture2D>(@"Textures\Player1");
             energyBallTexture = Content.Load<Texture2D>(@"Textures\Energyball");
+            evilTexture = Content.Load<Texture2D>(@"Textures\evil");
             Song = Content.Load<Song>(@"Sounds\Final_Music");
             MediaPlayer.IsRepeating = true;
 
@@ -147,6 +150,7 @@ namespace Game
             spriteBatch.Draw(Background, Vector2.Zero, Color.White);
             spriteBatch.Draw(player1Texture, player1Position, Color.White);
             spriteBatch.Draw(energyBallTexture, energyBallRectangle, Color.White);
+            spriteBatch.Draw(evilTexture, evilPosition, Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }
