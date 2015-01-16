@@ -56,6 +56,7 @@ namespace Game
             // TODO: Add your initialization logic here
             EnergyBall EB = new EnergyBall(this);
             base.Initialize();
+
         }
 
         /// <summary>
@@ -130,7 +131,12 @@ namespace Game
             {
                 MediaPlayer.Play(Song);
                 songstart = true;
-            }  
+            }
+
+            while (false)
+            {
+                Vector2 player1Position = new Vector2(90, 490); //(Width, Height)
+            }
 
 
             base.Update(gameTime);
